@@ -1,0 +1,21 @@
+Site\CoreBundle\Entity\Main:
+    type: entity
+    table: null
+    repositoryClass: Site\CoreBundle\Entity\MainRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        slug:
+            type: string
+            length: 255
+        title:
+            type: string
+            length: 255
+        content:
+            type: text
+            column: Content
+    lifecycleCallbacks: {  }

@@ -1,0 +1,31 @@
+Site\CoreBundle\Entity\News:
+    type: entity
+    table: null
+    repositoryClass: Site\CoreBundle\Entity\NewsRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        slug:
+            type: string
+            length: 255
+        title:
+            type: string
+            length: 255
+        content:
+            type: text
+        category:
+            type: string
+            length: 255
+        tegs:
+            type: string
+            length: 255
+        author:
+            type: string
+            length: 255
+        date:
+            type: datetime
+    lifecycleCallbacks: {  }

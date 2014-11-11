@@ -1,0 +1,19 @@
+Site\CoreBundle\Entity\Category:
+    type: entity
+    table: null
+    repositoryClass: Site\CoreBundle\Entity\CategoryRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        category:
+            type: string
+            length: 255
+        sub:
+            type: string
+            length: 255
+            nullable: true
+    lifecycleCallbacks: {  }
