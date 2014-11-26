@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+- phpMyAdmin XML Dump
+- version 4.0.10deb1
+- http://www.phpmyadmin.net
+-
+- Хост: localhost
+- Время создания: Окт 31 2014 г., 18:23
+- Версия сервера: 5.5.40-0ubuntu0.14.04.1
+- Версия PHP: 5.5.9-1ubuntu4.5
+-->
+
+<pma_xml_export version="1.0" xmlns:pma="http://www.phpmyadmin.net/some_doc_url/">
+    <!--
+    - Structure schemas
+    -->
+    <pma:structure_schemas>
+        <pma:database name="symfony" collation="latin1_swedish_ci" charset="latin1">
+            <pma:table name="Category">
+                CREATE TABLE `Category` (
+                  `id` int(11) NOT NULL AUTO_INCREMENT,
+                  `category` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+                  `sub` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+                  PRIMARY KEY (`id`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+            </pma:table>
+            <pma:table name="fos_user_group">
+                CREATE TABLE `fos_user_group` (
+                  `id` int(11) NOT NULL AUTO_INCREMENT,
+                  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+                  `roles` longtext COLLATE utf8_unicode_ci NOT NULL COMMENT '(DC2Type:array)',
+                  PRIMARY KEY (`id`),
+                  UNIQUE KEY `UNIQ_583D1F3E5E237E06` (`name`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+            </pma:table>
+            <pma:table name="fos_user_user">
+                CREATE TABLE `fos_user_user` (
+                  `id` int(11) NOT NULL AUTO_INCREMENT,
+                  `username` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+                  `username_canonical` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+                  `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+                  `email_canonical` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+                  `enabled` tinyint(1) NOT NULL,
+                  `salt` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+                  `password` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+                  `last_login` datetime DEFAULT NULL,
+                  `locked` tinyint(1) NOT NULL,
+                  `expired` tinyint(1) NOT NULL,
+                  `expires_at` datetime DEFAULT NULL,
+                  `confirmation_token` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+                  `password_requested_at` datetime DEFAULT NULL,
+                  `roles` longtext COLLATE utf8_unicode_ci NOT NULL COMMENT '(DC2Type:array)',
+                  `credentials_expired` tinyint(1) NOT NULL,
+                  `credentials_expire_at` datetime DEFAULT NULL,
+                  `created_at` datetime NOT NULL,
+                  `updated_at` datetime NOT NULL,
+                  `date_of_birth` datetime DEFAULT NULL,
+                  `firstname` varchar(64) COLLATE utf8_unicode_ci DEFAULT NULL,
+                  `lastname` varchar(64) COLLATE utf8_unicode_ci DEFAULT NULL,
+                  `website` varchar(64) COLLATE utf8_unicode_ci DEFAULT NULL,
+                  `biography` varchar(1000) COLLATE utf8_unicode_ci DEFAULT NULL,
+                  `gender` varchar(1) COLLATE utf8_unicode_ci DEFAULT NULL,
+                  `locale` varchar(8) COLLATE utf8_unicode_ci DEFAULT NULL,
+                  `timezone` varchar(64) COLLATE utf8_unicode_ci DEFAULT NULL,
+                  `phone` varchar(64) COLLATE utf8_unicode_ci DEFAULT NULL,
+                  `facebook_uid` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+                  `facebook_name` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+                  `facebook_data` longtext COLLATE utf8_unicode_ci COMMENT '(DC2Type:json)',
+                  `twitter_uid` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+                  `twitter_name` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+                  `twitter_data` longtext COLLATE utf8_unicode_ci COMMENT '(DC2Type:json)',
+                  `gplus_uid` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+                  `gplus_name` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+                  `gplus_data` longtext COLLATE utf8_unicode_ci COMMENT '(DC2Type:json)',
+                  `token` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+                  `two_step_code` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+                  PRIMARY KEY (`id`),
+                  UNIQUE KEY `UNIQ_C560D76192FC23A8` (`username_canonical`),
+                  UNIQUE KEY `UNIQ_C560D761A0D96FBF` (`email_canonical`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+            </pma:table>
+            <pma:table name="fos_user_user_group">
+                CREATE TABLE `fos_user_user_group` (
+                  `user_id` int(11) NOT NULL,
+                  `group_id` int(11) NOT NULL,
+                  PRIMARY KEY (`user_id`,`group_id`),
+                  KEY `IDX_B3C77447A76ED395` (`user_id`),
+                  KEY `IDX_B3C77447FE54D947` (`group_id`),
+                  CONSTRAINT `FK_B3C77447FE54D947` FOREIGN KEY (`group_id`) REFERENCES `fos_user_group` (`id`) ON DELETE CASCADE,
+                  CONSTRAINT `FK_B3C77447A76ED395` FOREIGN KEY (`user_id`) REFERENCES `fos_user_user` (`id`) ON DELETE CASCADE
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+            </pma:table>
+            <pma:table name="Main">
+                CREATE TABLE `Main` (
+                  `id` int(11) NOT NULL AUTO_INCREMENT,
+                  `slug` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+                  `title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+                  `Content` longtext COLLATE utf8_unicode_ci NOT NULL,
+                  PRIMARY KEY (`id`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+            </pma:table>
+            <pma:table name="News">
+                CREATE TABLE `News` (
+                  `id` int(11) NOT NULL AUTO_INCREMENT,
+                  `slug` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+                  `title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+                  `content` longtext COLLATE utf8_unicode_ci NOT NULL,
+                  `category` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+                  `tegs` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+                  `author` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+                  `date` datetime NOT NULL,
+                  PRIMARY KEY (`id`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+            </pma:table>
+        </pma:database>
+    </pma:structure_schemas>
+
+    <!--
+    - База данных: 'symfony'
+    -->
+    <database name="symfony">
+        <!-- Таблица Category -->
+        <!-- Таблица fos_user_group -->
+        <table name="fos_user_group">
+            <column name="id">1</column>
+            <column name="name">Admin</column>
+            <column name="roles">a:0:{}</column>
+        </table>
+        <!-- Таблица fos_user_user -->
+        <table name="fos_user_user">
+            <column name="id">1</column>
+            <column name="username">admin</column>
+            <column name="username_canonical">admin</column>
+            <column name="email">admin@mail.ad</column>
+            <column name="email_canonical">admin@mail.ad</column>
+            <column name="enabled">1</column>
+            <column name="salt">8bhcoig0lmw4g0gccc4gokowk80g84s</column>
+            <column name="password">xohSEu8hWntSQ9le+iKkne7xnFlo+EK7mMH2Odi845/4RDf2omhZGNHEy9RCaBlQzYPEH4uBzNsHqAMcq117gw==</column>
+            <column name="last_login">2014-10-31 16:39:24</column>
+            <column name="locked">0</column>
+            <column name="expired">0</column>
+            <column name="expires_at">NULL</column>
+            <column name="confirmation_token">NULL</column>
+            <column name="password_requested_at">NULL</column>
+            <column name="roles">a:1:{i:0;s:16:&quot;ROLE_SUPER_ADMIN&quot;;}</column>
+            <column name="credentials_expired">0</column>
+            <column name="credentials_expire_at">NULL</column>
+            <column name="created_at">2014-10-31 15:26:24</column>
+            <column name="updated_at">2014-10-31 16:39:24</column>
+            <column name="date_of_birth">NULL</column>
+            <column name="firstname">NULL</column>
+            <column name="lastname">NULL</column>
+            <column name="website">NULL</column>
+            <column name="biography">NULL</column>
+            <column name="gender">u</column>
+            <column name="locale">NULL</column>
+            <column name="timezone">NULL</column>
+            <column name="phone">NULL</column>
+            <column name="facebook_uid">NULL</column>
+            <column name="facebook_name">NULL</column>
+            <column name="facebook_data">null</column>
+            <column name="twitter_uid">NULL</column>
+            <column name="twitter_name">NULL</column>
+            <column name="twitter_data">null</column>
+            <column name="gplus_uid">NULL</column>
+            <column name="gplus_name">NULL</column>
+            <column name="gplus_data">null</column>
+            <column name="token">NULL</column>
+            <column name="two_step_code">NULL</column>
+        </table>
+        <!-- Таблица fos_user_user_group -->
+        <!-- Таблица Main -->
+        <table name="Main">
+            <column name="id">1</column>
+            <column name="slug">index</column>
+            <column name="title">Главная страница</column>
+            <column name="Content">Это главная страница</column>
+        </table>
+        <table name="Main">
+            <column name="id">2</column>
+            <column name="slug">Contact</column>
+            <column name="title">Наши Контакты</column>
+            <column name="Content">Страничка контактов</column>
+        </table>
+        <!-- Таблица News -->
+    </database>
+</pma_xml_export>

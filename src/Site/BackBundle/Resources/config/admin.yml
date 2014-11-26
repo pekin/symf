@@ -1,0 +1,34 @@
+# Site/BackBundle/Resources/config/admin.yml
+services:
+    sonata.admin.main:
+        class: Site\BackBundle\Admin\MainAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Content", label: "Main" }
+        arguments:
+            - ~
+            - Site\CoreBundle\Entity\Main
+            - ~
+        calls:
+            - [ setTranslationDomain, [SiteBackBundle]]
+
+    sonata.admin.news:
+        class: Site\BackBundle\Admin\NewsAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "News", label: "News" }
+        arguments:
+            - ~
+            - Site\CoreBundle\Entity\News
+            - ~
+        calls:
+            - [ setTranslationDomain, [SiteBackBundle]]
+
+    sonata.admin.category:
+        class: Site\BackBundle\Admin\CategoryAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "News", label: "Category" }
+        arguments:
+            - ~
+            - Site\CoreBundle\Entity\Category
+            - ~
+        calls:
+            - [ setTranslationDomain, [SiteBackBundle]]

@@ -1,0 +1,27 @@
+{% extends 'SiteFrontBundle::layout.html.twig' %}
+
+{% block title %}
+<title>{{ page.title }}</title>
+{% endblock %}
+{% block reght %}
+</div><!--end of grid-10--> 
+                
+                
+                <div class="grid-6 grid grey">
+                            <h2>Категории</h2>
+                            <p class="quote">
+                            {% if page2 %}
+                                {% for onepage2 in page2 %}
+                                    <h5><a href={{path('newslist',{'category':onepage2.id})}}>{{ onepage2.name }}</a></h5><br>
+                                {% endfor %}
+                            {% endif %}
+                            </p>
+                            <p class="quote">Теги</p>
+                </div>
+{% endblock %}
+{% block body %}
+	{% if page %}
+			<h3><p>{{ page.title }}</a></p></h3><p>{{ page.content|raw }}</p>
+
+	{% endif %}
+{% endblock %}

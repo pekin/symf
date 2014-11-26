@@ -1,0 +1,44 @@
+Site\CoreBundle\Entity\News:
+    type: entity
+    table: null
+    repositoryClass: Site\CoreBundle\Entity\NewsRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        slug:
+            type: string
+            length: 255
+        title:
+            type: string
+            length: 255
+        content:
+            type: text
+        author:
+            type: string
+            length: 255
+        date:
+            type: datetime
+    manyToOne:
+        category:
+            targetEntity: Category
+            inversedBy: news
+            joinColumn:
+                name: category_id
+                referencedColumnName: id
+    manyToMany:
+        tags:
+            targetEntity: Tags
+            inversedBy: news
+            joinTable:
+                name: tegs_id
+                joinColumns:
+                    user_id:
+                        referencedColumnName: id
+                inverseJoinColumns:
+                    group_id:
+                        referencedColumnName: id
+    lifecycleCallbacks: {  }
