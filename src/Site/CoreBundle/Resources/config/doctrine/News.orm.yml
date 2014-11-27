@@ -32,7 +32,7 @@ Site\CoreBundle\Entity\News:
     manyToMany:
         tags:
             targetEntity: Tags
-            inversedBy: name
+            inversedBy: news
             joinTable:
                 name: name_tags
                 joinColumns:

@@ -34,7 +34,7 @@ class News
     /**
      * @var string
      */
-    private $tegs;
+    private $tags;
 
     /**
      * @var string
@@ -155,9 +155,9 @@ class News
      * @param string $tegs
      * @return News
      */
-    public function setTegs($tegs)
+    public function setTags($tags)
     {
-        $this->tegs = $tegs;
+        $this->tags = $tags;
 
         return $this;
     }
@@ -167,9 +167,9 @@ class News
      *
      * @return string 
      */
-    public function getTegs()
+    public function getTags()
     {
-        return $this->tegs;
+        return $this->tags;
     }
 
     /**
