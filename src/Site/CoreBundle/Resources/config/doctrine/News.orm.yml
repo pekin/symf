@@ -32,13 +32,13 @@ Site\CoreBundle\Entity\News:
     manyToMany:
         tags:
             targetEntity: Tags
-            inversedBy: news
+            inversedBy: name
             joinTable:
-                name: tegs_id
+                name: name_tags
                 joinColumns:
-                    user_id:
+                    name_id:
                         referencedColumnName: id
                 inverseJoinColumns:
-                    group_id:
+                    tags_id:
                         referencedColumnName: id
     lifecycleCallbacks: {  }

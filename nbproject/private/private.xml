@@ -3,12 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/coffeein/symfony/src/Site/FrontBundle/Resources/views/News/newslist.html.twig</file>
-            <file>file:/home/coffeein/symfony/src/Site/CoreBundle/Resources/config/doctrine/Category.orm.yml</file>
-            <file>file:/home/coffeein/symfony/src/Site/CoreBundle/Resources/config/doctrine/News.orm.yml</file>
-            <file>file:/home/coffeein/symfony/src/Site/FrontBundle/Resources/views/News/onenews.html.twig</file>
-            <file>file:/home/coffeein/symfony/src/Site/CoreBundle/Resources/config/doctrine/Tags.orm.yml</file>
-            <file>file:/home/coffeein/symfony/src/Site/FrontBundle/Resources/views/layout.html.twig</file>
+            <file>file:/home/yuliaha/www/symfony/src/Site/CoreBundle/Resources/config/doctrine/News.orm.yml</file>
+            <file>file:/home/yuliaha/www/symfony/src/Site/FrontBundle/Resources/views/layout.html.twig</file>
+            <file>file:/home/yuliaha/www/symfony/src/Site/CoreBundle/Resources/config/doctrine/Category.orm.yml</file>
+            <file>file:/home/yuliaha/www/symfony/src/Site/CoreBundle/Entity/Tags.php</file>
+            <file>file:/home/yuliaha/www/symfony/src/Site/CoreBundle/Resources/config/doctrine/Tags.orm.yml</file>
         </group>
     </open-files>
 </project-private>

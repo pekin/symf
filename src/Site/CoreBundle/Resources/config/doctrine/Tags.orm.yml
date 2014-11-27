@@ -9,7 +9,8 @@ Site\CoreBundle\Entity\Tags:
             generator:
                 strategy: AUTO
     fields:
-        tags:
-            type: string
-            length: 255
+    manyToMany:
+        name:
+            targetEntity: News
+            mappedBy: tags
     lifecycleCallbacks: {  }

@@ -17,7 +17,7 @@ class Tags
     /**
      * @var string
      */
-    private $tags;
+    private $name;
 
 
     /**
@@ -36,9 +36,9 @@ class Tags
      * @param string $tags
      * @return Tags
      */
-    public function setTags($tags)
+    public function setName($name)
     {
-        $this->tags = $tags;
+        $this->name = $name;
 
         return $this;
     }
@@ -48,8 +48,8 @@ class Tags
      *
      * @return string 
      */
-    public function getTags()
+    public function getName()
     {
-        return $this->tags;
+        return $this->name;
     }
 }
